@@ -1,14 +1,14 @@
 from threading import *
 import time
 
-obj = Semaphore(5)
+obj = Semaphore(3)
 #print(obj._value)
 
 def some_function(name):
     obj.acquire()
 
     print(name, "has started...")
-    time.sleep(7)
+    time.sleep(4)
     print(name, "is done!")
 
     obj.release()

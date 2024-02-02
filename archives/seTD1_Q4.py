@@ -15,11 +15,11 @@ print(disk[0:10])
 registerInterruptHandler(DISK_WRITE_FINISHED, handleWriteFinished) # fonction pour définir comment gérer l’interruption DISK_WRITE_FINISHED (ici, la fin de l'écriture)
 registerInterruptHandler(DISK_READ_FINISHED, handleReadFinished) # pour l’interruption DISK_READ_FINISHED
 
+sem.acquire()
 writeCell(disk, 0, 32)
 
 print("Premier affichage: ", end="")
 print(disk[0])
-sem.acquire()
 
 sleep(1)
 #sleep(2) # The sleep() function suspends (waits) execution of the current thread for a given number of seconds. 
